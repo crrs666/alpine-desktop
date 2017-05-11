@@ -4,7 +4,7 @@ FROM charliev5/alpineedge
 ADD apk /tmp/apk
 RUN cp /tmp/apk/-57cfc5fa.rsa.pub /etc/apk/keys
 
-RUN apk --update --no-cache -f add xrdp xvfb alpine-desktop xfce4 thunar-volman \
+RUN apk --update --no-cache --allow-untrusted add xrdp xvfb alpine-desktop xfce4 thunar-volman \
 faenza-icon-theme slim xf86-input-synaptics xf86-input-mouse xf86-input-keyboard \
 setxkbmap sudo util-linux dbus wireshark ttf-freefont xauth supervisor busybox-suid openssl nano\
 && apk add /tmp/apk/ossp-uuid-1.6.2-r0.apk \
